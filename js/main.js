@@ -1,7 +1,7 @@
 $(function () {
   $(".burger").on("click", function () {
     $(".burger").toggleClass("burger--active");
-    $(".nav").toggleClass("burger--active");
+    $(".nav, .colaps").toggleClass("burger--active");
     $("body").toggleClass("lock");
   });
 
@@ -10,3 +10,6 @@ $(function () {
   });
   
 });
+
+let a = document.getElementsByClassName("burger");
+console.log(a);

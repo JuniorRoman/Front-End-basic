@@ -74,7 +74,7 @@ body {
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   gap: 68px;
   flex: 1 1 100%;
@@ -88,17 +88,24 @@ body {
   font-weight: var(--fw2);
 }
 
+.colaps {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  gap: 68px;
+}
+
 .nav__list {
   display: flex;
   flex: 1;
+  align-items: center;
   gap: 48px;
 }
 
 .nav__list a,
 .btn__box a {
-  padding:2px 5px;
   border-radius: 3px;
-  outline:2px solid transparent;
+  outline: 2px solid transparent;
   transition: outline .5s;
 }
 
@@ -117,6 +124,7 @@ body {
   display: flex;
   align-items: center;
   gap: 48px;
+  
 }
 
 .link__btn {
@@ -220,33 +228,54 @@ body {
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
   }
 
-  .nav__list {
+
+  .colaps {
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 50px;
-    bottom: 0;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    padding: 100px;
-    display: block;
     height: 100vh;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, .85);
+    top: 50px;
+    left: 0;
+    gap: 10px;
+    background-color: rgba(14, 12, 28, 0.95);
+    padding: 50px;
     transform: translateX(-100%);
-    transition: all .8s;
+    transition: transform 0.5s ease-in-out;
   }
 
-  .burger--active .nav__list {
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .btn__box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 100%;
+    gap: 20px;
+  }
+
+  .colaps.burger--active {
     transform: translateX(0);
   }
 
-  .nav__list li {
+
+  .nav__list li,
+  .btn__box li {
     color: #DEEFE4;
     font-size: 2.5rem;
   }
 
-  .nav__list li {
-    margin-bottom: 10px;
+  .link__btn {
+    background-color: var(--blue);
+    color: var(--gray);
+    padding: 12px 37px;
   }
 
   body.lock {
@@ -300,6 +329,7 @@ body {
   height: 4px;
   width: 100%;
   top: 22px;
+  z-index: -1;
 }
 
 .offer__profession {
