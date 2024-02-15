@@ -1,4 +1,4 @@
-@import url('/style/reset.css');
+@import url('reset.css');
 
 /*---------------main.css--------------*/
 :root {
@@ -125,7 +125,7 @@ body {
   display: flex;
   align-items: center;
   gap: 48px;
-
+  
 }
 
 .link__btn {
@@ -210,9 +210,11 @@ body {
   outline: 2px solid transparent;
   transition: outline .5s;
 }
+
 .button:focus {
   outline: 2px solid rgb(77, 190, 239, 1);
 }
+
 .offer__sale {
   font-weight: var(--fw1);
   font-size: var(--h1);
